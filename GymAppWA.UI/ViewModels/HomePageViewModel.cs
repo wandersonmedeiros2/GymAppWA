@@ -25,6 +25,8 @@ namespace GymAppWA.UI.ViewModels
             set { SetProperty(ref _sudents, value); }
         }
 
+        public DelegateCommand RemoveItemCommand { get; set; }
+
         public HomePageViewModel()
         {
             var students = new List<StudentModel>()
@@ -39,7 +41,13 @@ namespace GymAppWA.UI.ViewModels
             };
 
             Students = new ObservableCollection<StudentModel>(students);
+
+            RemoveItemCommand = new DelegateCommand(RemoveItem);
         }
 
+        private void RemoveItem(object parametos)
+        {
+            this.Students.Remove(SelectedStudent);
+        }
     }
 }

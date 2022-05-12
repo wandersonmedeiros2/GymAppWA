@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymAppWA.UI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,13 +17,11 @@ using Windows.UI.Xaml.Navigation;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace GymAppWA.UI.Views
-{
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class CadastroPagePage : Page
+{   
+    public sealed partial class RegisterPage : Page
     {
-        public CadastroPagePage()
+        public RegisterViewModel ViewModel => (RegisterViewModel)this.DataContext;
+        public RegisterPage()
         {
             this.InitializeComponent();
         }

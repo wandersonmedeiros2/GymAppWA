@@ -5,12 +5,13 @@
     xmlns:local="using:GymAppWA.UI.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:models="using:Model.Models" xmlns:converteradapters="using:GymAppWA.UI.Common.ConverterAdapters"
+    xmlns:models="using:Model.Models" 
+    xmlns:converteradapters="using:GymAppWA.UI.Common.ConverterAdapters"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
     >
     <Page.Resources>
-        <converteradapters:DateTimeToStringConverterAdapter x:Key="DateTimeToStringConverter"/>
+        <converteradapters:DateTimeToStringConverterAdapter  x:Key="DateTimeToStringConverter"/>
         <DataTemplate x:Key="ListAlunosItemTemplate" x:DataType="models:StudentModel">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -46,8 +47,9 @@
                    x:Name="txTitle"
                    />
         <ListView Grid.Row="1"
-                  ItemsSource="{x:Bind ViewModel.Students, Mode=OneWay}"
                   ItemTemplate="{StaticResource ListAlunosItemTemplate}"
+                  ItemsSource="{x:Bind ViewModel.Students, Mode=OneWay}"                  
+                  SelectedItem="{x:Bind ViewModel.SelectedStudent, Mode=TwoWay}"
                   />
     </Grid>    
 </Page>

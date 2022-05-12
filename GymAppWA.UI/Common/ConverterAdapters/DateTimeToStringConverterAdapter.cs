@@ -20,6 +20,5 @@ namespace GymAppWA.UI.Common.ConverterAdapters
         {
             return dateTimeToStringConverter.ConvertBack(value, targetType, parameter, language);
         }
-
     }
 }
